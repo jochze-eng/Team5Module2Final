@@ -1,45 +1,110 @@
-1. Install the GCP SDK/ CLI
+# Google Cloud Platform (GCP) Setup Guide
 
-2. Open a terminal in VScode or any cmd. Type the following command
-type "gcloud init" then press Enter. If you already authenticate before it will ask you 2 options. I choose [1] Re-initialize this configuration [default] with new settins
-type "gcloud projects list" this will show all projects in GCP. We need to set this to our project id "fluid-keyword-454503-a8". 
-if "gcloud projects list" got error do the login again by typing "gcloud auth login" this will open web browswer and ask you to loginto GCP
-type "gcloud config set project fluid-keyword-454503-a8" to get project folder to our project
-type "gcloud config list" to check your login account and project. We should see project = fluid-keyword-454503-a8
+## 1. Install and Initialize GCP SDK/CLI
 
-3. pip install google-cloud-bigquery
-Install the "Google Cloud Code" VScode extension is optional
+### Prerequisites
+- Install Google Cloud SDK from the [official website](https://cloud.google.com/sdk/docs/install)
 
-4. We can check our buket list in the project. Following CLI work
-"gsutil ls" This will list all buckets in your current project
-"gsutil ls -p fluid-keyword-454503-a8" More detailed listing:
-"gsutil ls gs://team5brazilian" If you want to see details about a specific bucket. This will return 
-gs://team5brazilian/olist_customers_dataset.csv
-gs://team5brazilian/olist_geolocation_dataset.csv
-gs://team5brazilian/olist_order_items_dataset.csv
-gs://team5brazilian/olist_order_payments_dataset.csv
-gs://team5brazilian/olist_order_reviews_dataset.csv
-gs://team5brazilian/olist_orders_dataset.csv
-gs://team5brazilian/olist_products_dataset.csv
-gs://team5brazilian/olist_sellers_dataset.csv
+### Authentication and Project Setup
 
-5. to create buket "gsutil mb gs://your-unique-bucket-name". Well we can use GCP Console for ease of getting the job done
+1. Open terminal in VSCode or Command Prompt
 
-About how to access BigQuerry from CLI
-1. "bq ls", "bq ls --format=pretty", "bq ls --format=json". Any of this will list all datasets in your current project. Return like this
-datasetId  
------------
-brazilian
+2. Initialize GCP configuration:
+   ```bash
+   gcloud init
+   ```
+   - If already authenticated, choose: 
+     `[1] Re-initialize this configuration [default] with new settings`
 
+3. List available projects:
+   ```bash
+   gcloud projects list
+   ```
+   - If you encounter an error, log in first:
+     ```bash
+     gcloud auth login
+     ```
+     - This opens a web browser for GCP authentication
 
-2. "bq ls brazilian". we can check how many tables are in side the dataset. I got the return like this:
-      tableId        Type    Labels   Time Partitioning   Clustered Fields  
- ------------------- ------- -------- ------------------- ------------------
-  customers_dataset   TABLE
-  geolocation         TABLE
-  order_items         TABLE
-  order_payments      TABLE
-  orders              TABLE
-  products            TABLE
-  sellers             TABLE
+4. Set your project:
+   ```bash
+   gcloud config set project fluid-keyword-454503-a8
+   ```
 
+5. Verify configuration:
+   ```bash
+   gcloud config list
+   ```
+   - Confirm project is set to `fluid-keyword-454503-a8`
+
+## 2. Prepare Development Environment
+
+1. Install BigQuery Python library:
+   ```bash
+   pip install google-cloud-bigquery
+   ```
+
+2. Optional: Install VSCode Extension
+   - Install "Google Cloud Code" from VSCode Extensions
+
+## 3. Explore Google Cloud Storage (GCS)
+
+### List Buckets and Files
+
+1. List all buckets:
+   ```bash
+   gsutil ls
+   ```
+
+2. Detailed project bucket listing:
+   ```bash
+   gsutil ls -p fluid-keyword-454503-a8
+   ```
+
+3. View specific bucket contents:
+   ```bash
+   gsutil ls gs://team5brazilian
+   ```
+   This will show files like:
+   - `olist_customers_dataset.csv`
+   - `olist_geolocation_dataset.csv`
+   - ... (other CSV files)
+
+4. Create a new bucket (if needed):
+   ```bash
+   gsutil mb gs://your-unique-bucket-name
+   ```
+   💡 *Tip: You can also create buckets via GCP Console*
+
+## 4. Accessing BigQuery via CLI
+
+### List Datasets
+```bash
+bq ls
+# Alternative formats:
+# bq ls --format=pretty
+# bq ls --format=json
+```
+
+### List Tables in a Dataset
+```bash
+bq ls brazilian
+```
+
+Example output:
+```
+tableId             Type    Labels   Time Partitioning   Clustered Fields  
+------------------- ------- -------- ------------------- ------------------
+customers_dataset   TABLE
+geolocation         TABLE
+order_items         TABLE
+order_payments      TABLE
+orders              TABLE
+products            TABLE
+sellers             TABLE
+```
+
+## 💡 Pro Tips
+- Always double-check your project ID
+- Use `gcloud auth login` if authentication fails
+- Keep your Google Cloud SDK updated
