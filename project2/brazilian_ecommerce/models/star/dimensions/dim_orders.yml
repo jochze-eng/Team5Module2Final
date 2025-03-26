@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: dim_orders
+    description: "This table provides information about each order."
+    columns:
+      - name: order_id
+        description: "Primary key for the order."
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: "Foreign key linking to the customers dimension."
+      - name: order_status
+        description: "The status of the order."
+      - name: order_purchase_timestamp
+        description: "The timestamp when the order was placed."
+      - name: order_approved_at
+        description: "The timestamp when the order payment was approved."
+      - name: order_delivered_carrier_date
+        description: "The timestamp when the order was handed over to the logistics carrier."
+      - name: order_delivered_customer_date
+        description: "The timestamp when the order was delivered to the customer."
+      - name: order_estimated_delivery_date
+        description: "The customer's estimated delivery date."

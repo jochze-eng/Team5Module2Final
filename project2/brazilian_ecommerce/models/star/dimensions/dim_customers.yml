@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: "This table provides a consolidated view of customer information along with their first associated geolocation."
+    columns:
+      - name: customer_id
+        description: "Primary key for the customer."
+        tests:
+          - unique
+          - not_null
+      - name: customer_unique_id
+        description: "A unique identifier for each customer."
+      - name: customer_zip_code_prefix
+        description: "The first 5 digits of the customer's zip code."
+      - name: customer_city
+        description: "The city of the customer."
+      - name: customer_state
+        description: "The state of the customer."
+      - name: geolocation_lat
+        description: "The latitude of the first associated geolocation for the customer's zip code."
+      - name: geolocation_lng
+        description: "The longitude of the first associated geolocation for the customer's zip code."

@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: dim_sellers
+    description: "This table provides information about each seller, including their geolocation."
+    columns:
+      - name: seller_id
+        description: "Primary key for the seller."
+        tests:
+          - unique
+          - not_null
+      - name: seller_zip_code_prefix
+        description: "The first 5 digits of the seller's zip code."
+      - name: seller_city
+        description: "The city of the seller."
+      - name: seller_state
+        description: "The state of the seller."
+      - name: seller_lat
+        description: "The latitude of the seller's geolocation."
+      - name: seller_lng
+        description: "The longitude of the seller's geolocation."

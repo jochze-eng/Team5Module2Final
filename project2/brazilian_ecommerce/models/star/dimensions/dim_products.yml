@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: dim_products
+    description: "This table provides information about each product, including its category and translation."
+    columns:
+      - name: product_id
+        description: "Primary key for the product."
+        tests:
+          - unique
+          - not_null
+      - name: product_category_name
+        description: "The name of the product category in Portuguese."
+      - name: product_category_name_english
+        description: "The name of the product category in English."
+      #- name: product_weight_g
+       # description: "The weight of the product in grams."
+      #- name: product_length_cm
+       # description: "The length of the product in centimeters."
+      #- name: product_height_cm
+       # description: "The height of the product in centimeters."
+      #- name: product_width_cm
+       # description: "The width of the product in centimeters."

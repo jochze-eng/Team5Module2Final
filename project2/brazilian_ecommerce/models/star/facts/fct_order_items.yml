@@ -1,0 +1,44 @@
+version: 2
+
+models:
+  - name: fct_order_items
+    description: "This table contains the transactional details of each item in an order, linking to various dimensions."
+    columns:
+      - name: order_id
+        description: "Foreign key linking to the orders dimension."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_orders')
+              field: order_id
+      - name: order_item_id
+        description: "Sequential number identifying the position of the item within the order."
+      - name: product_id
+        description: "Foreign key linking to the products dimension."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_products')
+              field: product_id
+      - name: seller_id
+        description: "Foreign key linking to the sellers dimension."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_sellers')
+              field: seller_id
+      - name: shipping_limit_date
+        description: "Deadline for the seller to ship the order."
+      - name: price
+        description: "Price of the item."
+      - name: freight_value
+        description: "Shipping cost of the item."
+      - name: customer_id
+        description: "Customer ID associated with the order (from the dim_orders table)."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_customers')
+              field: customer_id
+      - name: order_total
+        description: "Derived column for Total value of the order."
