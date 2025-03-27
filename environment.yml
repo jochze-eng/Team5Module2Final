@@ -1,0 +1,17 @@
+name: team5project2
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip=24.3.1
+  - pandas
+  - numpy
+  - matplotlib
+  - seaborn
+  - google-cloud-bigquery  # BigQuery support
+  - google-cloud-storage   # Recommended for GCS integration
+  - pip:
+      - meltano==3.6.0
+      - dbt-core==1.9.2
+      - dbt-bigquery==1.9.1
