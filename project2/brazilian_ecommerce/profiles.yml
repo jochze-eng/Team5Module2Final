@@ -1,0 +1,25 @@
+brazilian_ecommerce:
+  target: dev
+  outputs:
+    dev:
+      dataset: olist_star_schema
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      location: US
+      method: service-account-json
+      priority: interactive
+      project: fluid-keyword-454503-a8
+      threads: 4
+      type: bigquery
+      keyfile_json:
+        type: service_account
+        project_id: fluid-keyword-454503-a8
+        private_key_id: 9bf5e58e299106ad1d4be15cd8e8603934add7f3
+        private_key: -----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDetwi5SZIATaw9\nUGOvh34BJBP7O2k+6FHr+kkicTnM4Qq/HIc9J0wuRtZYJdihALpboNlnz7l/fEmb\nEKe+FyYoF09bmgLj8BgcaeI2InR1tqDUTwImxfg9GBXpdb/Gfd2aZgv5APeZtSvq\naeUBq/GTJiPPH/ZNOUFtiPyjTk8EJZTMratxCa04n0IiYK5P5tO9vKDlvwwhISxB\neUW4dV1aq/zYetiL6rLZDusQ9pdJ33FQrORkO+wbw2GFumYFcB6/3sE/z2Shrmsy\n5Hv/pXvXcu/qDbPlx0YoFp4XFRAaEsdGwa74Fdw8nJVKJKUOPXKcj94A+0OgS4lh\nQiSBPpq5AgMBAAECggEAANN5eQ8h4es9Kw9isJqQ9/9IArEg+LkttUbHoX99g89x\niy1s0/19aG4zVSmIxj9wMYRPzMqGCTLEZsqW8LB5yqwcINPEqc9GFkmPQPz7j8SL\nuqszWmz2uNVKHtmktTSvedHh6VHHWVQvyO4NHyaMiMDwtjqLtD7KNGuNvQD+mojp\nC1/SSM3U2FmLm3jB1azLl8pbDTtCHozwNTG3YV1MWFSGlK7x9z7C0xIRRUPRm6vz\n1A99G70v7gM0Y4B4FlLlEl5PxCujRh4+2srb/Z+dlliuwoCqcab4/BV0GIV1vzDh\nemw+bNy7L85kfH+MnLZwAcLNZ/U2MHoCXcn0RgYzzQKBgQD3kKqpV5KYwv9SYfAd\nqNABZJM/fHK3RKV8UDWfJjXcyIvT2ijycsh6EoALxpOvqhyoQR9AOfRkSTG8BqrS\n3sv1qYn9H/dfh9B7GjSudTHO50635Rxgz/gSBGgVYgjtDdEbhxJZj/BQhj04Em0t\nUjW+TalipRT7r9T8F08mKAuR7QKBgQDmTZ4XSxqZDTdewH6ioKIq/BnWZKvinyo8\nZYpO0AUCDyVuiyZMwQuudyj5F+rOLux41Uv+Uc/SYogYxdvKIdVUQH3fQvYuQUBY\n1/TsieavLA+/EISOhAmvHxhyyxrGIAtBlrrQmZEtatBxmwZsqfyXOcZy1doD0E8M\nlHjaCbaCfQKBgQC5wQysn47ZnIajM+VM+9uHEAYEPsZ8iL96tVxmm+8SSE/SmADd\nWg7euX7mVwt9ZTC3dpWSRWoAzYLJyF7odk+ndpyZFyEvxuJBW/pnZHwI+TnxdbGD\nWsiSDEhksvhrllBuTT0RgpUYdoD8z6anuOWmcvNDlwZViytOM9cplCaKSQKBgDKJ\nQ7Ce1WZSZR0QpnkvQIaoLU9DZghjntQEABaNRRwPkMoyFKRxFAwjr8UBP5Ag8dkO\nDQ/wiecDohO1jyZKyFIlmLleK0E5JlKYiPFCzXEQ/R+TE1Nmm+1mqGnAMc7aBz5M\nQhA2MopBzx2uw/kiUAArOGXIkX+WvVHoXqCR0w/NAoGBAKbmvWo5Tmneffze01Ew\ny36cN1B6tuhdiCwJcifKCkxkJjwkHAj6RmIJB9pjoFSfjg9eOS/LClbdmvNgicaa\nFdH+w/fvi0QHUS98gVVnrEMd2CkTXz7AZQHnRTYXT/iw9Je5esskIMVd6UCM/T4H\nxlC8gSYKUrbqqLCuwa+K28A9\n-----END PRIVATE KEY-----\n
+        client_email: team5-334@fluid-keyword-454503-a8.iam.gserviceaccount.com
+        client_id: 106927317238583016206
+        auth_uri: https://accounts.google.com/o/oauth2/auth
+        token_uri: https://oauth2.googleapis.com/token
+        auth_provider_x509_cert_url: https://www.googleapis.com/oauth2/v1/certs
+        client_x509_cert_url: https://www.googleapis.com/robot/v1/metadata/x509/team5-334%40fluid-keyword-454503-a8.iam.gserviceaccount.com 
+
