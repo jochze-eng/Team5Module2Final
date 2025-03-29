@@ -15,6 +15,9 @@ models:
         description: "The city of the seller."
       - name: seller_state
         description: "The state of the seller."
+        tests:
+          - dbt_expectations.expect_column_values_to_be_in_set:
+              value_set: ['SP', 'RJ', 'MG', 'RS', 'PR', 'SC', 'BA', 'DF', 'GO', 'ES', 'PE', 'CE', 'PA', 'MT', 'MA', 'MS', 'PI', 'RN', 'PB', 'SE', 'AL', 'TO', 'AM', 'RO', 'AC', 'AP', 'RR'] # List of Brazilian states
       - name: seller_lat
         description: "The latitude of the seller's geolocation."
       - name: seller_lng
