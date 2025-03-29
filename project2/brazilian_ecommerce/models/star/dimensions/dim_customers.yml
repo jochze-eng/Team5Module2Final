@@ -17,6 +17,9 @@ models:
         description: "The city of the customer."
       - name: customer_state
         description: "The state of the customer."
+        tests:
+          - dbt_expectations.expect_column_values_to_be_in_set:
+              value_set: ['SP', 'RJ', 'MG', 'RS', 'PR', 'SC', 'BA', 'DF', 'GO', 'ES', 'PE', 'CE', 'PA', 'MT', 'MA', 'MS', 'PI', 'RN', 'PB', 'SE', 'AL', 'TO', 'AM', 'RO', 'AC', 'AP', 'RR']
       - name: geolocation_lat
         description: "The latitude of the first associated geolocation for the customer's zip code."
       - name: geolocation_lng
