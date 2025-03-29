@@ -31,8 +31,14 @@ models:
         description: "Deadline for the seller to ship the order."
       - name: price
         description: "Price of the item."
+        tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
       - name: freight_value
         description: "Shipping cost of the item."
+        tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
       - name: customer_id
         description: "Customer ID associated with the order (from the dim_orders table)."
         tests:
@@ -42,3 +48,6 @@ models:
               field: customer_id
       - name: order_total
         description: "Derived column for Total value of the order."
+        tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
