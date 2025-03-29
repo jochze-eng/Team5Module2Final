@@ -13,8 +13,16 @@ models:
         description: "Foreign key linking to the customers dimension."
       - name: order_status
         description: "The status of the order."
+        tests:
+          - dbt_expectations.expect_column_values_to_be_in_set:
+              value_set: ['created', 'delivered', 'shipped', 'canceled', 'approved', 'invoiced', 'processing', 'unavailable'] # Example set of valid statuses
       - name: order_purchase_timestamp
         description: "The timestamp when the order was placed."
+        tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: timestamp
+          - dbt_expectations.expect_column_values_to_be_between:
+              max_value: "CURRENT_TIMESTAMP()"
       - name: order_approved_at
         description: "The timestamp when the order payment was approved."
       - name: order_delivered_carrier_date
